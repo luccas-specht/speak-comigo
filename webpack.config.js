@@ -23,9 +23,10 @@ module.exports = {
   },
   /*
   add when have more than one entrypoint on a single HTML page.
-  see more: https://webpack.js.org/guides/development/
-  https://bundlers.tooling.report/code-splitting/multi-entry/
-  https://webpack.js.org/guides/code-splitting/
+  see more: 
+    https://webpack.js.org/guides/development/
+    https://bundlers.tooling.report/code-splitting/multi-entry/
+    https://webpack.js.org/guides/code-splitting/
   optimization: {
     runtimeChunk: 'single',
   },

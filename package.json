@@ -2,8 +2,7 @@
   "name": "polly-browser",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack --watch",
-    "start": "webpack-dev-server --mode development --live-reload --open"
+    "dev": "webpack-dev-server --mode development --live-reload --open"
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity": "^3.32.0",
