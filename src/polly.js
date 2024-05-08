@@ -42,7 +42,7 @@ const speechParams = {
   SampleRate: '16000', // For example, '16000
   Text: '', // The 'speakText' function supplies this value
   TextType: 'text', // For example, "text"
-  VoiceId: 'Matthew', // For example, "Matthew"
+  VoiceId: 'Joanna', // For example, "Matthew"
 };
 // snippet-end:[Polly.JavaScript.BrowserExample.configV3]
 // snippet-start:[Polly.JavaScript.BrowserExample.synthesizeV3]
@@ -57,8 +57,7 @@ const speakText = async () => {
 
     const command = new DescribeVoicesCommand({
       // DescribeVoicesInput
-      Engine: 'standard',
-      LanguageCode: 'fr-FR',
+      LanguageCode: 'en-US',
       IncludeAdditionalLanguageCodes: true,
     });
     const response = await client.send(command);
@@ -67,7 +66,7 @@ const speakText = async () => {
     // Load the URL of the voice recording into the browser
     document.getElementById('audioSource').src = url;
     document.getElementById('audioPlayback').load();
-    document.getElementById('result').innerHTML = 'Speech ready to play.';
+    document.getElementById('result').innerHTML = 'aham';
   } catch (err) {
     console.log('Error', err);
     document.getElementById('result').innerHTML = err;
