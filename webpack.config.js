@@ -6,9 +6,10 @@ module.exports = {
   entry: './src/polly.js',
   devtool: false,
   target: 'web',
-  devtool: 'inline-source-map', // js lets us know witch bundle part of source code got error
+  //devtool: 'inline-source-map', // js lets us know witch bundle part of source code got error
   devServer: {
-    static: './dist',
+    watchFiles: ['src/**/*.html', 'src/**/*.css'], // monitoring changes and update the browser. Only for non-javascript files
+    liveReload: true,
     client: {
       progress: false, // shows the progress in console.log
     },
@@ -32,7 +33,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html', // diretorio onde vai pegar o index para gerar
-      title: 'Development',
     }),
   ],
 };

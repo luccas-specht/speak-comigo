@@ -66,7 +66,7 @@ const speakText = async () => {
     // Load the URL of the voice recording into the browser
     document.getElementById('audioSource').src = url;
     document.getElementById('audioPlayback').load();
-    document.getElementById('result').innerHTML = 'aham';
+    document.getElementById('result').innerHTML = 'se quiser não manooo';
   } catch (err) {
     console.log('Error', err);
     document.getElementById('result').innerHTML = err;
