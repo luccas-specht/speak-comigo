@@ -1,0 +1,13 @@
+:root {
+  --background-color: '#ffffff';
+
+  --black-primary: '#141718';
+  --black-secondary: '#23262F';
+  --black-ternary: '#2F2F2F';
+
+  --gray-primary: '#616161';
+  --gray-secondary: '#8E9295';
+  --gray-ternary: '#494949';
+
+  --white-primary: '#ffffff';
+}
