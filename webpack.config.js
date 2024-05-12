@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // src/polly.js --mode development --libraryTarget commonjs2 --target web --devtool false -o src/dist/main.js
 module.exports = {
   entry: {
@@ -11,6 +11,10 @@ module.exports = {
       {
         test: /\.html$/,
         use: 'html-loader',
+      },
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
@@ -27,7 +31,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'), // Define o diretório de saída
     filename: '[name].bundle.js', // Define o nome do arquivo de saída
-    libraryTarget: 'commonjs2', // Define o formato do módulo (commonjs2)
+    //libraryTarget: 'commonjs2', // Define o formato do módulo (commonjs2)
     globalObject: 'this', // Define o objeto global para o ambiente web
     clean: true,
   },
@@ -41,9 +45,11 @@ module.exports = {
     runtimeChunk: 'single',
   },
    */
+
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/ui/pages/welcome/index.html', // diretorio onde vai pegar o index para gerar
     }),
+    new MiniCssExtractPlugin(),
   ],
 };
