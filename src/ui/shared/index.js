@@ -1,0 +1,1 @@
+export { personasObject } from './personas';

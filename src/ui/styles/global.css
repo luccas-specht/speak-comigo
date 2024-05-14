@@ -10,6 +10,11 @@ body {
   height: 100%;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 button,
 a {
   cursor: pointer;
@@ -31,4 +36,5 @@ ul {
   width: 100%;
   padding: 10px;
   border: 2px solid red;
+  max-width: 768px;
 }
