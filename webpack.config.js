@@ -1,11 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// src/polly.js --mode development --libraryTarget commonjs2 --target web --devtool false -o src/dist/main.js
+
 module.exports = {
-  entry: {
-    index: './src/ui/pages/welcome/index.html',
-  },
+  entry: './src/ui/pages/welcome/index.html',
   module: {
     rules: [
       {
@@ -16,39 +14,35 @@ module.exports = {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/image/[name][ext]', // Gera imagens na pasta dist/assets/image/
+        },
+      },
     ],
   },
   devtool: false,
   target: 'web',
-  //devtool: 'inline-source-map', // js lets us know witch bundle part of source code got error
   devServer: {
-    watchFiles: ['src/**/*.html', 'src/**/*.css'], // monitoring changes and update the browser. Only for non-javascript files
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    watchFiles: ['src/**/*.html', 'src/**/*.css'],
     liveReload: true,
     client: {
-      progress: false, // shows the progress in console.log
+      progress: false,
     },
   },
   output: {
-    path: path.resolve(__dirname, 'dist'), // Define o diretório de saída
-    filename: '[name].bundle.js', // Define o nome do arquivo de saída
-    //libraryTarget: 'commonjs2', // Define o formato do módulo (commonjs2)
-    globalObject: 'this', // Define o objeto global para o ambiente web
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
     clean: true,
   },
-  /*
-  add when have more than one entrypoint on a single HTML page.
-  see more: 
-    https://webpack.js.org/guides/development/
-    https://bundlers.tooling.report/code-splitting/multi-entry/
-    https://webpack.js.org/guides/code-splitting/
-  optimization: {
-    runtimeChunk: 'single',
-  },
-   */
-
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/ui/pages/welcome/index.html', // diretorio onde vai pegar o index para gerar
+      template: './src/ui/pages/welcome/index.html',
     }),
     new MiniCssExtractPlugin(),
   ],
