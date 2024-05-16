@@ -26,6 +26,16 @@
   padding: 10px;
 }
 
+.persona-card::after {
+  content: '';
+  align-self: center;
+  position: absolute;
+  bottom: -10px;
+  width: 95%;
+  height: 2px;
+  background-color: rgba(140, 148, 164, 0.24);
+}
+
 .persona-card header {
   width: 100%;
   justify-content: flex-end;
