@@ -1,14 +1,56 @@
 @import '../../styles/global.css';
 @import '../../styles/variables.css';
 
-.persona-class-container {
+.wrapper-persona-card {
   border: 2px solid blue;
+  width: 100%;
+  height: 100%;
+  padding-top: 1rem;
   display: flex;
-  justify-content: space-between;
-  align-items: end;
-  border-radius: 10px;
+  gap: 5px;
+}
+
+.persona-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 170px;
+  max-width: 170px;
+  max-height: 170px;
   background-image: url(../../assets/image/danielle.png);
   background-repeat: no-repeat;
-  background-position-x: center;
+  background-position: center;
+  background-attachment: scroll;
   background-size: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.persona-card header {
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.persona-card footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2px;
+}
+
+.persona-card footer > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.persona-card footer > div > span {
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  color: white;
 }

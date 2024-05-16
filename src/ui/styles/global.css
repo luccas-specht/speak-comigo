@@ -1,3 +1,9 @@
+/* CSS Styles */
+@import './icons.css';
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -8,11 +14,14 @@
 html,
 body {
   height: 100%;
+  background-color: #ffffff;
 }
 
 body {
   display: flex;
   justify-content: center;
+  font-size: 0.7rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 button,
@@ -33,7 +42,7 @@ ul {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 2px solid red;
   max-width: 768px;
 }

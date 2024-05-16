@@ -1,0 +1,29 @@
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.flag {
+  display: inline-block;
+  width: 22px;
+  height: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-profile {
+  background-image: url('../assets/svg/user-icons/profile-name.svg');
+}
+
+.flag-gb-england {
+  background-image: url('../assets/svg/flags/gb-england.svg');
+}
+
+.arrow {
+  background-image: url('../assets/svg/user-icons/arrow.svg');
+}
