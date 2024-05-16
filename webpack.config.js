@@ -18,7 +18,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/image/[name][ext]', // Gera imagens na pasta dist/assets/image/
+          filename: 'assets/[name][ext]', // Gera imagens, icons, svg... na pasta dist/assets/image/
         },
       },
     ],
