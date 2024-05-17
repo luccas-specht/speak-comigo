@@ -8,10 +8,13 @@ class PersonaCard extends HTMLElement {
 
   connectedCallback() {
     const shadow = this.shadowRoot;
-    const style = this.stylesheet();
 
-    this.build();
-    shadow.appendChild(style);
+    const styleElement = document.createElement('style');
+    const styleStructure = this.stylesheet({ styleElement });
+    const htmlStructure = this.build();
+
+    shadow.innerHTML = htmlStructure;
+    shadow.appendChild(styleStructure);
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -19,7 +22,7 @@ class PersonaCard extends HTMLElement {
   }
 
   build() {
-    this.shadowRoot.innerHTML = `
+    const htmlStructure = `
       <div class="persona-card">
         <header>
           <i class="icon arrow"></i>
@@ -36,15 +39,15 @@ class PersonaCard extends HTMLElement {
         </footer>
       </div>
     `;
+    return htmlStructure;
   }
 
   /* 
     Trade offs:
     - Scoped Styles: Can't get the css properties from the parent in DOM. What should to it's define the host pseud class as parenting styles
   */
-  stylesheet() {
-    const style = document.createElement('style');
-    style.textContent = `
+  stylesheet({ styleElement }) {
+    styleElement.textContent = `
       :host {
         display: flex;
         width: 170px;
@@ -134,8 +137,7 @@ class PersonaCard extends HTMLElement {
         background-image: url(assets/arrow.svg); /* caminho do ícone da seta */
       }
     `;
-
-    return style;
+    return styleElement;
   }
 }
 
