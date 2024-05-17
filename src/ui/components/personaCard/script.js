@@ -1,12 +1,56 @@
 class PersonaCard extends HTMLElement {
+  static observedAttributes = ['from', 'name', 'accent', 'img-path'];
+
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
+  }
 
-    const shadow = this.attachShadow({ mode: 'open' });
+  connectedCallback() {
+    const shadow = this.shadowRoot;
+    const style = this.stylesheet();
 
-    // Criar e adicionar o estilo ao shadow DOM
+    this.build();
+    shadow.appendChild(style);
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log(`Attribute ${name} has changed.`);
+  }
+
+  build() {
+    this.shadowRoot.innerHTML = `
+      <div class="persona-card">
+        <header>
+          <i class="icon arrow"></i>
+        </header>
+        <footer>
+          <div>
+            <i class="icon icon-profile"></i>
+            <span id="name">Sandra gorgina</span>
+          </div>
+          <div>
+            <i class="flag flag-gb-england"></i>
+            <span id="accent">British Accent</span>
+          </div>
+        </footer>
+      </div>
+    `;
+  }
+
+  /* 
+    Trade offs:
+    - Scoped Styles: Can't get the css properties from the parent in DOM. What should to it's define the host pseud class as parenting styles
+  */
+  stylesheet() {
     const style = document.createElement('style');
     style.textContent = `
+      :host {
+        display: flex;
+        width: 170px;
+        height: 170px;
+      }
+
       .persona-card {
         display: flex;
         flex-direction: column;
@@ -23,6 +67,7 @@ class PersonaCard extends HTMLElement {
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         justify-content: space-between;
         padding: 10px;
+        position: relative;
       }
       
       .persona-card::after {
@@ -89,31 +134,8 @@ class PersonaCard extends HTMLElement {
         background-image: url(assets/arrow.svg); /* caminho do ícone da seta */
       }
     `;
-    shadow.appendChild(style);
 
-    // Criar e adicionar o elemento div ao shadow DOM com a classe 'persona-card'
-    const personaCard = document.createElement('div');
-    personaCard.classList.add('persona-card');
-
-    // Criar o conteúdo HTML dentro do persona-card
-    personaCard.innerHTML = `
-      <header>
-        <i class="icon arrow"></i>
-      </header>
-      <footer>
-        <div>
-          <i class="icon icon-profile"></i>
-          <span>Sandra gorgina</span>
-        </div>
-        <div>
-          <i class="flag flag-gb-england"></i>
-          <span>British Accent</span>
-        </div>
-      </footer>
-    `;
-
-    // Adicionar o personaCard ao shadow DOM
-    shadow.appendChild(personaCard);
+    return style;
   }
 }
 
