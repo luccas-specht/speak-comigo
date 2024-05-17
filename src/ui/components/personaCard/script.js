@@ -4,6 +4,10 @@ class PersonaCard extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
+    this._from = 'X';
+    this._name = 'not defined';
+    this._accent = 'not defined';
+    this._imPath = 'assets/person-not-found.png';
   }
 
   connectedCallback() {
@@ -18,23 +22,34 @@ class PersonaCard extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    console.log(`Attribute ${name} has changed.`);
+    if (name === 'name') {
+      this._name = newValue;
+    }
+    if (name === 'accent') {
+      this._accent = newValue;
+    }
+    if (name === 'img-path') {
+      this._imPath = newValue;
+    }
+    if (name === 'from') {
+      this._from = newValue;
+    }
   }
 
   build() {
     const htmlStructure = `
-      <div class="persona-card">
+      <div class="persona-card" id='opa'>
         <header>
           <i class="icon arrow"></i>
         </header>
         <footer>
           <div>
             <i class="icon icon-profile"></i>
-            <span id="name">Sandra gorgina</span>
+            <span id="name">${this._name}</span>
           </div>
           <div>
             <i class="flag flag-gb-england"></i>
-            <span id="accent">British Accent</span>
+            <span id="accent">${this._accent} Accent</span>
           </div>
         </footer>
       </div>
@@ -60,7 +75,9 @@ class PersonaCard extends HTMLElement {
         flex: 1 1 170px;
         max-width: 170px;
         max-height: 170px;
-        background-image: url(assets/danielle.png);
+        background-image: url(${
+          this._imgPath ?? 'assets/person-not-found.png'
+        });
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: scroll;
