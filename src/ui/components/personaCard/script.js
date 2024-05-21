@@ -7,7 +7,7 @@ class PersonaCard extends HTMLElement {
     this._from = 'X';
     this._name = 'not defined';
     this._accent = 'not defined';
-    this._imPath = 'assets/image/person-not-found.png';
+    this._imgPath = 'assets/image/person-not-found.png';
   }
 
   connectedCallback() {
@@ -29,7 +29,7 @@ class PersonaCard extends HTMLElement {
       this._accent = newValue;
     }
     if (name === 'img-path') {
-      this._imPath = newValue;
+      this._imgPath = newValue;
     }
     if (name === 'from') {
       this._from = newValue;
@@ -38,7 +38,7 @@ class PersonaCard extends HTMLElement {
 
   build() {
     const htmlStructure = `
-      <div class="persona-card" id='opa'>
+      <div class="persona-card">
         <header>
           <i class="icon arrow"></i>
         </header>
@@ -63,18 +63,12 @@ class PersonaCard extends HTMLElement {
   */
   stylesheet({ styleElement }) {
     styleElement.textContent = `
-      :host {
-        display: flex;
-        width: 170px;
-        height: 170px;
-      }
-
       .persona-card {
         display: flex;
         flex-direction: column;
-        flex: 1 1 170px;
-        max-width: 170px;
-        max-height: 170px;
+        width: 150px;
+        height: 150px;
+        
         background-image: url(${this._imgPath});
         background-repeat: no-repeat;
         background-position: center;
