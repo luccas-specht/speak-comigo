@@ -22,6 +22,12 @@
 
 @media screen and (max-width: 733px) {
   .wrapper-persona-card persona-card[name='Ayanda Dlamini'] {
+    max-width: calc(100% / 4);
+  }
+}
+
+@media screen and (max-width: 693px) {
+  .wrapper-persona-card persona-card[name='Ayanda Dlamini'] {
     max-width: calc(100% / 3);
   }
 }
