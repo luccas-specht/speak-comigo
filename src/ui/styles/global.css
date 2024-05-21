@@ -48,6 +48,12 @@ ul {
 }
 
 /* personas classes*/
+.persona-background-generic {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
 .persona-danielle {
   background-image: url('../assets/image/danielle.png');
 }

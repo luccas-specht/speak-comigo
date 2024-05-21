@@ -66,13 +66,13 @@ class PersonaCard extends HTMLElement {
       .persona-card {
         display: flex;
         flex-direction: column;
-        width: 150px;
-        height: 150px;
-        
+        width: 100%;
+        height: 100%;
+        min-width: 140px;
+        min-height: 160px;
         background-image: url(${this._imgPath});
         background-repeat: no-repeat;
         background-position: center;
-        background-attachment: scroll;
         background-size: cover;
         border-radius: 10px;
         cursor: pointer;
@@ -115,7 +115,7 @@ class PersonaCard extends HTMLElement {
       .persona-card footer > div > span {
         font-style: normal;
         font-weight: 500;
-        text-align: center;
+        text-align: flex-start;
         color: var(--white-primary);
       }
       
