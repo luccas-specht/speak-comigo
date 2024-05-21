@@ -7,7 +7,7 @@ class PersonaCard extends HTMLElement {
     this._from = 'X';
     this._name = 'not defined';
     this._accent = 'not defined';
-    this._imPath = 'assets/person-not-found.png';
+    this._imPath = 'assets/image/person-not-found.png';
   }
 
   connectedCallback() {
@@ -75,9 +75,7 @@ class PersonaCard extends HTMLElement {
         flex: 1 1 170px;
         max-width: 170px;
         max-height: 170px;
-        background-image: url(${
-          this._imgPath ?? 'assets/person-not-found.png'
-        });
+        background-image: url(${this._imgPath});
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: scroll;
@@ -128,8 +126,8 @@ class PersonaCard extends HTMLElement {
       }
       
       .icon {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         background-size: cover;
       }
 
@@ -143,15 +141,15 @@ class PersonaCard extends HTMLElement {
       }
       
       .icon-profile {
-        background-image: url(assets/profile-name.svg); /* caminho do ícone do perfil */
+        background-image: url(assets/svg/profile-name.svg); /* caminho do ícone do perfil */
       }
       
       .flag-gb-england {
-        background-image: url(assets/gb-england.svg); /* caminho da bandeira britânica */
+        background-image: url(assets/svg/gb-england.svg); /* caminho da bandeira britânica */
       }
       
       .arrow {
-        background-image: url(assets/arrow.svg); /* caminho do ícone da seta */
+        background-image: url(assets/svg/arrow.svg); /* caminho do ícone da seta */
       }
     `;
     return styleElement;

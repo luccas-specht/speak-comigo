@@ -4,7 +4,7 @@
   flex: 1 1 170px;
   max-width: 170px;
   max-height: 170px;
-  background-image: url(../../assets/image/danielle.png);
+  background-image: url('assets/danielle.png');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: scroll;
@@ -14,6 +14,7 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   justify-content: space-between;
   padding: 10px;
+  position: relative;
 }
 
 .persona-card::after {
@@ -51,4 +52,31 @@
   font-weight: 500;
   text-align: center;
   color: var(--white-primary);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+}
+
+.flag {
+  display: inline-block;
+  min-width: 22px;
+  min-height: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-profile {
+  background-image: url(assets/profile-name.svg); /* caminho do ícone do perfil */
+}
+
+.flag-gb-england {
+  background-image: url(assets/gb-england.svg); /* caminho da bandeira britânica */
+}
+
+.arrow {
+  background-image: url(assets/arrow.svg); /* caminho do ícone da seta */
 }

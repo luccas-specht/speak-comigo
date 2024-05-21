@@ -15,10 +15,17 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.png$/i, ///\.(png|jpe?g|gif)$/i
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[name][ext]', // Gera imagens, icons, svg... na pasta dist/assets/image/
+          filename: 'assets/image/[name][ext]', // Gera imagens, icons, svg... na pasta dist/assets/image/
+        },
+      },
+      {
+        test: /\.svg$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/svg/[name].svg',
         },
       },
     ],
