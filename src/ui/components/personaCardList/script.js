@@ -1,4 +1,4 @@
-export const personas = [
+var personas = [
   {
     imgPath: 'assets/image/matthew.png',
     from: 'GB',
@@ -54,3 +54,34 @@ export const personas = [
     accent: 'South Africa',
   },
 ];
+
+function getWrapperListSection() {
+  return document.getElementsByClassName('wrapper-persona-card')[0];
+}
+
+function createPersonaTag({ persona }) {
+  const { imgPath, from, name, accent } = persona;
+
+  const personaCardTag = document.createElement('persona-card');
+  personaCardTag.setAttribute('img-path', imgPath);
+  personaCardTag.setAttribute('from', from);
+  personaCardTag.setAttribute('name', name);
+  personaCardTag.setAttribute('accent', accent);
+
+  return personaCardTag;
+}
+
+function addPersonaIntoWrapperList({ sectionTag, personaTag }) {
+  sectionTag.appendChild(personaTag);
+}
+
+(function main() {
+  const sectionTag = getWrapperListSection();
+
+  personas.forEach((element) => {
+    addPersonaIntoWrapperList({
+      sectionTag: sectionTag,
+      personaTag: createPersonaTag({ persona: element }),
+    });
+  });
+})();

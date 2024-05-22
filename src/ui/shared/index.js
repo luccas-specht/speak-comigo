@@ -1,1 +1,1 @@
-export { personasObject } from './personas';
+export { personas } from './personas';
