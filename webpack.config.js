@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/ui/pages/welcome/index.html',
+  devtool: false,
+  target: 'web',
   module: {
     rules: [
       {
@@ -28,10 +30,18 @@ module.exports = {
           filename: 'assets/svg/[name].svg',
         },
       },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
     ],
   },
-  devtool: false,
-  target: 'web',
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
