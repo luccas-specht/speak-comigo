@@ -76,7 +76,7 @@ class PersonaCard extends HTMLElement {
         background-size: cover;
         border-radius: 10px;
         cursor: pointer;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        filter: drop-shadow(0px 4px 4px var(--back-secondary));
         justify-content: space-between;
         padding: 10px;
         position: relative;
@@ -89,7 +89,7 @@ class PersonaCard extends HTMLElement {
         bottom: -10px;
         width: 95%;
         height: 2px;
-        background-color: rgba(140, 148, 164, 0.24);
+        background-color: var(--gray-quaternary);
       }
       
       .persona-card header {
@@ -120,8 +120,9 @@ class PersonaCard extends HTMLElement {
       }
       
       .icon {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
+        margin-right: 1px;
         background-size: cover;
       }
 

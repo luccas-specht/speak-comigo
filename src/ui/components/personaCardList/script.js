@@ -24,12 +24,6 @@ var personas = [
     accent: 'British',
   },
   {
-    imgPath: 'assets/image/emma.png',
-    from: 'GB',
-    name: 'Emma Lindley',
-    accent: 'British',
-  },
-  {
     imgPath: 'assets/image/brian.png',
     from: 'GB',
     name: 'Brian Jones',
@@ -46,6 +40,12 @@ var personas = [
     from: 'GB',
     name: 'Niamh Murphy',
     accent: 'Irish',
+  },
+  {
+    imgPath: 'assets/image/emma.png',
+    from: 'GB',
+    name: 'Emma Lindley',
+    accent: 'British',
   },
   {
     imgPath: 'assets/image/ayanda.png',

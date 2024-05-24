@@ -4,8 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/ui/pages/welcome/index.html',
-  devtool: false,
-  target: 'web',
   module: {
     rules: [
       {

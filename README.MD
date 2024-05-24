@@ -7,4 +7,4 @@
 
 ## Issues and improvements
 
--- add images in AWS database
+-- add images into AWS database

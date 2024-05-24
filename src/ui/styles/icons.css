@@ -1,19 +1,5 @@
-.icon {
-  display: inline-block;
-  min-width: 24px;
-  min-height: 24px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.flag {
-  display: inline-block;
-  min-width: 22px;
-  min-height: 15px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.arrow {
+  background-image: url('../assets/svg/user-icons/arrow.svg');
 }
 
 .icon-profile {
@@ -24,6 +10,6 @@
   background-image: url('../assets/svg/flags/gb-england.svg');
 }
 
-.arrow {
-  background-image: url('../assets/svg/user-icons/arrow.svg');
+.flag-usa {
+  background-image: url('../assets/svg/flags/usa.svg');
 }

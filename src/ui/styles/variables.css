@@ -2,12 +2,14 @@
   --background-color: #ffffff;
 
   --black-primary: #141718;
-  --black-secondary: #23262f;
-  --black-ternary: #2f2f2f;
+  --back-secondary: rgba(0, 0, 0, 0.3);
+  --black-ternary: #23262f;
+  --black-quaternary: #2f2f2f;
 
   --gray-primary: #616161;
   --gray-secondary: #8e9295;
   --gray-ternary: #494949;
+  --gray-quaternary: rgba(140, 148, 164, 0.24);
 
   --white-primary: #ffffff;
 }

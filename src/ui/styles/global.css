@@ -1,4 +1,5 @@
 @import './icons.css';
+@import './personas.css';
 @import './variables.css';
 
 /* Fonts */
@@ -45,51 +46,4 @@ ul {
   width: 100%;
   padding: 12px;
   max-width: 768px;
-}
-
-/* personas classes*/
-.persona-background-generic {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-.persona-danielle {
-  background-image: url('../assets/image/danielle.png');
-}
-
-.persona-matthew {
-  background-image: url('../assets/image/matthew.png');
-}
-
-.persona-amy {
-  background-image: url('../assets/image/amy.png');
-}
-
-.persona-emma {
-  background-image: url('../assets/image/emma.png');
-}
-
-.persona-brian {
-  background-image: url('../assets/image/brian.png');
-}
-
-.persona-niamh {
-  background-image: url('../assets/image/niamh.png');
-}
-
-.persona-ayanda {
-  background-image: url('../assets/image/ayanda.png');
-}
-
-.persona-ruth {
-  background-image: url('../assets/image/ruth.png');
-}
-
-.persona-gregory {
-  background-image: url('../assets/image/gregory.png');
-}
-
-.persona-not-found {
-  background-image: url('../assets/image/person-not-found.png');
 }
