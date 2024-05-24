@@ -21,19 +21,14 @@ class PersonaCard extends HTMLElement {
     shadow.appendChild(styleStructure);
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'name') {
-      this._name = newValue;
-    }
-    if (name === 'accent') {
-      this._accent = newValue;
-    }
-    if (name === 'img-path') {
-      this._imgPath = newValue;
-    }
-    if (name === 'flag-from') {
-      this._flagFrom = newValue;
-    }
+  attributeChangedCallback(name, _, newValue) {
+    const attributes = {
+      name: () => (this._name = newValue),
+      accent: () => (this._accent = newValue),
+      'img-path': () => (this._imgPath = newValue),
+      'flag-from': () => (this._flagFrom = newValue),
+    };
+    attributes[name]();
   }
 
   build() {
