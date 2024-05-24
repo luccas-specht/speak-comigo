@@ -19,9 +19,9 @@ var personas = [
   },
   {
     imgPath: 'assets/image/danielle.png',
-    flagFrom: 'england',
+    flagFrom: 'united-states',
     name: 'Danielle Miller',
-    accent: 'British',
+    accent: 'USA',
   },
   {
     imgPath: 'assets/image/brian.png',

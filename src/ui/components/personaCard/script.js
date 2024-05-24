@@ -142,7 +142,7 @@ class PersonaCard extends HTMLElement {
       .flag-england {
         background-image: url(${this.getFlag({
           from: this._flagFrom,
-        })}); /* caminho da bandeira britânica */
+        })}); /* caminho da bandeira */
       }
       
       .arrow {
