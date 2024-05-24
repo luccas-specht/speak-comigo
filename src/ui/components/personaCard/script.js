@@ -1,10 +1,10 @@
 class PersonaCard extends HTMLElement {
-  static observedAttributes = ['from', 'name', 'accent', 'img-path'];
+  static observedAttributes = ['flag-from', 'name', 'accent', 'img-path'];
 
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this._from = 'X';
+    this._flagFrom = 'X';
     this._name = 'not defined';
     this._accent = 'not defined';
     this._imgPath = 'assets/image/person-not-found.png';
@@ -31,8 +31,8 @@ class PersonaCard extends HTMLElement {
     if (name === 'img-path') {
       this._imgPath = newValue;
     }
-    if (name === 'from') {
-      this._from = newValue;
+    if (name === 'flag-from') {
+      this._flagFrom = newValue;
     }
   }
 
@@ -48,7 +48,7 @@ class PersonaCard extends HTMLElement {
             <span id="name">${this._name}</span>
           </div>
           <div>
-            <i class="flag flag-gb-england"></i>
+            <i class="flag flag-england"></i>
             <span id="accent">${this._accent} Accent</span>
           </div>
         </footer>
@@ -139,8 +139,10 @@ class PersonaCard extends HTMLElement {
         background-image: url(assets/svg/profile-name.svg); /* caminho do ícone do perfil */
       }
       
-      .flag-gb-england {
-        background-image: url(assets/svg/gb-england.svg); /* caminho da bandeira britânica */
+      .flag-england {
+        background-image: url(${this.getFlag({
+          from: this._flagFrom,
+        })}); /* caminho da bandeira britânica */
       }
       
       .arrow {
@@ -148,6 +150,17 @@ class PersonaCard extends HTMLElement {
       }
     `;
     return styleElement;
+  }
+
+  getFlag({ from }) {
+    const images = new Map();
+
+    images.set('england', 'assets/svg/england.svg');
+    images.set('united-states', 'assets/svg/united-states.svg');
+    images.set('ireland', 'assets/svg/ireland.svg');
+    images.set('south-africa', 'assets/svg/south-africa.svg');
+
+    return images.get(from);
   }
 }
 

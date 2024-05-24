@@ -6,10 +6,18 @@
   background-image: url('../assets/svg/user-icons/profile-name.svg');
 }
 
-.flag-gb-england {
-  background-image: url('../assets/svg/flags/gb-england.svg');
+.flag-england {
+  background-image: url('../assets/svg/flags/england.svg');
 }
 
 .flag-usa {
-  background-image: url('../assets/svg/flags/usa.svg');
+  background-image: url('../assets/svg/flags/united-states.svg');
+}
+
+.flag-ireland {
+  background-image: url('../assets/svg/flags/ireland.svg');
+}
+
+.south-africa {
+  background-image: url('../assets/svg/flags/south-africa.svg');
 }
