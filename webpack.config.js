@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/ui/pages/welcome/index.html',
+  entry: {
+    personas: './src/ui/pages/personas/index.html',
+    personaDetails: './src/ui/pages/personaDetails/index.html',
+  },
   module: {
     rules: [
       {
@@ -57,7 +60,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/ui/pages/welcome/index.html',
+      template: './src/ui/pages/personaDetails/index.html',
     }),
     new MiniCssExtractPlugin(),
   ],
