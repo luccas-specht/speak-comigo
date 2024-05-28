@@ -34,9 +34,16 @@ class HeaderMenu extends HTMLElement {
       :host {
         width: 100%;
         height: 60px;
+        display: block;
+        z-index: 10;
       }
 
-      .header-wrapper {
+      .header-wrapper { 
+        position: fixed; 
+        top: 0; 
+        left: 0;
+        z-index: 99;
+        max-height: 60px;
         display: flex;
         height: 100%;
         width: 100%;
