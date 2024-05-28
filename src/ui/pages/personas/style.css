@@ -5,7 +5,9 @@
   flex-wrap: wrap;
   gap: 20px 10px;
   max-width: var(--max-width-container);
+  margin-top: 30px;
 }
+
 .wrapper-persona-card > persona-card {
   flex: 1 1;
   width: 100%;
