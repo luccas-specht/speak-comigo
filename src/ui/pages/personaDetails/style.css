@@ -49,4 +49,28 @@
   border-top-right-radius: 20px;
   margin-top: -20px;
   z-index: 100;
+  position: relative;
+}
+
+.wrapper-persona-details > article:last-child::before {
+  content: 'About me';
+  border-radius: 10px;
+  padding: 5px 30px;
+  align-self: center;
+  background-color: #e5a75f;
+  margin-top: -20px;
+  font-weight: 700;
+  color: white;
+  font-size: 18px;
+  filter: drop-shadow(0px 4px 4px var(#e5a75f));
+}
+
+.wrapper-persona-info {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  width: 100%;
+  flex: 1;
+  border: 2px solid red;
 }
