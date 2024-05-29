@@ -1,0 +1,52 @@
+.wrapper-persona-details {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  max-width: 375px;
+  flex-direction: column;
+}
+
+.wrapper-persona-details article {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  filter: drop-shadow(0px 5px 25px var(--back-secondary));
+}
+
+.wrapper-persona-details > article:first-child {
+  background-image: url('../../assets/image/niamh.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.wrapper-persona-details > article:first-child > a {
+  font-style: normal;
+  font-weight: 400;
+  max-height: 20px;
+  font-size: 14px;
+  color: #e0e0e0;
+  margin-top: 3px;
+  margin-left: 5px;
+}
+
+.wrapper-persona-details > article:first-child i {
+  width: 20px;
+  height: 20px;
+}
+
+.wrapper-persona-details > article:last-child {
+  border: 2px solid white;
+  background-color: white;
+  flex: 1.3;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: -20px;
+  z-index: 100;
+}

@@ -2,6 +2,10 @@
   background-image: url('../assets/svg/user-icons/arrow.svg');
 }
 
+.arrow-left {
+  background-image: url('../assets/svg/arrow-left.svg');
+}
+
 .icon-profile {
   background-image: url('../assets/svg/user-icons/profile-name.svg');
 }

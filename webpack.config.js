@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    personas: './src/ui/pages/personas/index.html',
+    personas: './src/ui/pages/personaDetails/index.html',
   },
   module: {
     rules: [
@@ -59,7 +59,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/ui/pages/personas/index.html',
+      template: './src/ui/pages/personaDetails/index.html',
     }),
     new MiniCssExtractPlugin(),
   ],
