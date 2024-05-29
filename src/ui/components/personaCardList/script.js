@@ -2,7 +2,7 @@ var personas = [
   {
     imgPath: 'assets/image/matthew.png',
     flagFrom: 'united-states',
-    name: 'Matthew brain',
+    name: 'Matthew Brain',
     accent: 'American',
   },
   {
