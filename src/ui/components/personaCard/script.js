@@ -33,7 +33,7 @@ class PersonaCard extends HTMLElement {
 
   build() {
     const htmlStructure = `
-      <a class="persona-card" href="/persona-details">
+      <a class="persona-card" href="/persona-details?name=${this._name}">
         <header>
           <i class="icon arrow"></i>
         </header>
