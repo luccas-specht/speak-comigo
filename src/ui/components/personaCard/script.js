@@ -33,7 +33,7 @@ class PersonaCard extends HTMLElement {
 
   build() {
     const htmlStructure = `
-      <div class="persona-card">
+      <a class="persona-card" href="/persona-details">
         <header>
           <i class="icon arrow"></i>
         </header>
@@ -47,7 +47,7 @@ class PersonaCard extends HTMLElement {
             <span id="accent">${this._accent} Accent</span>
           </div>
         </footer>
-      </div>
+      </a>
     `;
     return htmlStructure;
   }
@@ -59,6 +59,7 @@ class PersonaCard extends HTMLElement {
   stylesheet({ styleElement }) {
     styleElement.textContent = `
       .persona-card {
+        text-decoration: none;
         display: flex;
         flex-direction: column;
         width: 100%;

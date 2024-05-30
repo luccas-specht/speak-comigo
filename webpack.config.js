@@ -54,7 +54,6 @@ module.exports = {
     },
     historyApiFallback: {
       rewrites: [
-        { from: /^\/$/, to: '/personas.html' },
         { from: /^\/personas$/, to: '/personas.html' },
         { from: /^\/persona-details$/, to: '/personaDetails.html' },
       ],
