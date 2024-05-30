@@ -20,7 +20,9 @@ class HeaderMenu extends HTMLElement {
       <header class="header-wrapper"> 
         <div class="nav-background">
          <div> 
-         <img src="assets/image/full-logo-speak-comigo.png" alt="logo speak comigo full version"/>
+         <a href="/personas"> 
+            <img src="assets/image/full-logo-speak-comigo.png" alt="logo speak comigo full version"/>
+         </a>
          <button aria-label="open-menu"> </button>
          </div>
         </div>
