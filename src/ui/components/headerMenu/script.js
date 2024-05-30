@@ -74,8 +74,8 @@ class HeaderMenu extends HTMLElement {
       }    
 
       .nav-background > div > button {
-        height: 20px;
-        width: 25px;
+        height: 15px;
+        width: 20px;
         cursor: pointer;
         position: relative; 
         background-color: transparent; 
@@ -84,14 +84,14 @@ class HeaderMenu extends HTMLElement {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding: 5px 0;      
+        padding: 3px 0;
       }    
 
       .nav-background > div > button::before, 
         .nav-background > div > button::after {
             content: "";
             height: 2px; 
-            width: 25px; 
+            width: 25px;
             background-color: #EAEAEA; 
         }
     `;
