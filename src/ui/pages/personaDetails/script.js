@@ -89,7 +89,6 @@ function getPersonaByName({ name }) {
       description:
         'Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and is predominantly well known for his striking rock posters. Ken started in Perth Western Australia doing posters and album artwork for local bands.',
     },
-
     {
       imgPath: 'assets/image/ayanda.png',
       flagFrom: 'south-africa',
@@ -104,7 +103,6 @@ function getPersonaByName({ name }) {
 }
 
 function renderPersonaDetailsCard({ persona, HTMLElementToAppend }) {
-  console.log({ persona, HTMLElementToAppend });
   const { imgPath, flagClass, from, name, accent, description } = persona;
 
   const htmlStructure = `
@@ -170,6 +168,11 @@ function renderPersonaDetailsCard({ persona, HTMLElementToAppend }) {
   `;
 
   HTMLElementToAppend.innerHTML = htmlStructure;
+  const element = document.querySelector(
+    '.wrapper-persona-details > aside:first-child'
+  );
+
+  element.style.backgroundImage = `url('${imgPath}')`;
 }
 
 (function main() {
