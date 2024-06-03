@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     personas: './src/ui/pages/personas/index.html',
     personaDetails: './src/ui/pages/personaDetails/index.html',
+    globalJs: './src/global/main.js',
   },
   module: {
     rules: [
@@ -32,7 +33,7 @@ module.exports = {
         },
       },
       {
-        test: /\.m?js$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
