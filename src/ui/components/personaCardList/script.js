@@ -1,70 +1,3 @@
-var personas = [
-  {
-    imgPath: 'assets/image/matthew.png',
-    flagFrom: 'united-states',
-    from: 'California, United States',
-    name: 'Matthew Brain',
-    accent: 'American',
-  },
-  {
-    imgPath: 'assets/image/ruth.png',
-    flagFrom: 'united-states',
-    from: 'Washington, D.C, United States',
-    name: 'Ruth Brown',
-    accent: 'American',
-  },
-  {
-    imgPath: 'assets/image/gregory.png',
-    flagFrom: 'united-states',
-    from: 'Arkansas, United States',
-    name: 'Gregory Smith',
-    accent: 'American',
-  },
-  {
-    imgPath: 'assets/image/danielle.png',
-    flagFrom: 'united-states',
-    from: 'New York City, United States',
-    name: 'Danielle Miller',
-    accent: 'American',
-  },
-  {
-    imgPath: 'assets/image/brian.png',
-    flagFrom: 'england',
-    from: 'London, England',
-    name: 'Brian Jones',
-    accent: 'British',
-  },
-  {
-    imgPath: 'assets/image/amy.png',
-    flagFrom: 'england',
-    from: 'London, England',
-    name: 'Amy Williams',
-    accent: 'British',
-  },
-  {
-    imgPath: 'assets/image/emma.png',
-    flagFrom: 'england',
-    from: 'Nottingham, England',
-    name: 'Emma Lindley',
-    accent: 'British',
-  },
-  {
-    imgPath: 'assets/image/niamh.png',
-    flagFrom: 'ireland',
-    from: 'Dublin, Ireland',
-    name: 'Niamh Murphy',
-    accent: 'Irish',
-  },
-
-  {
-    imgPath: 'assets/image/ayanda.png',
-    flagFrom: 'south-africa',
-    from: 'Joanesburgo, South Africa',
-    name: 'Ayanda Dlamini',
-    accent: 'South Africa',
-  },
-];
-
 function getWrapperListSection() {
   return document.getElementsByClassName('wrapper-persona-card')[0];
 }
@@ -85,7 +18,18 @@ function addPersonaIntoWrapperList({ sectionTag, personaTag }) {
   sectionTag.appendChild(personaTag);
 }
 
+function getPersonasFromLocalStorage() {
+  const personas = localStorage.getItem('personas');
+  const personasParsed = JSON.parse(personas);
+  try {
+    return Object.values(personasParsed);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 (function main() {
+  const personas = getPersonasFromLocalStorage();
   const sectionTag = getWrapperListSection();
 
   personas.forEach((element) => {
