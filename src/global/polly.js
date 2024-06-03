@@ -51,7 +51,7 @@ const speechParams = {
   // Update the Text parameter with the text entered by the user
   //speechParams.Text = document.getElementById('textEntry').value;
   try {
-    let url = await getSynthesizeSpeechUrl({
+    const url = await getSynthesizeSpeechUrl({
       client,
       params: speechParams,
     });

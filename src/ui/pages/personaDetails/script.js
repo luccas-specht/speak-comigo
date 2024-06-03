@@ -64,12 +64,9 @@ function renderPersonaDetailsCard({ persona, HTMLElementToAppend }) {
           <div class="wrapper-persona-info wrapper-content-actions">
             <figure>
               <figcaption>Listening my voice</figcaption>
-              <audio
-                controls
-                preload
-                controlsList="nodownload noplaybackrate noplaybackspeed"
-                src="../../assets/audio/test.mp3"
-              ></audio>
+              <audio id="audioPlayback" controls>
+              <source id="audioSource" type="audio/mp3" />
+            </audio>
             </figure>
           </div>
         </aside>
@@ -85,9 +82,9 @@ function renderPersonaDetailsCard({ persona, HTMLElementToAppend }) {
 }
 
 function getPersonasFromLocalStorage() {
-  const personas = localStorage.getItem('personas');
-  const personasParsed = JSON.parse(personas);
   try {
+    const personas = localStorage.getItem('personas');
+    const personasParsed = JSON.parse(personas);
     return personasParsed;
   } catch (e) {
     console.log(e);
@@ -96,9 +93,9 @@ function getPersonasFromLocalStorage() {
 
 (function main() {
   if (window.location) {
-    const personas = getPersonasFromLocalStorage();
     const urlCoded = window.location.href;
     const name = getNameFromURL({ urlCoded });
+    const personas = getPersonasFromLocalStorage();
     const persona = getPersonaByName({ name, personas });
     const mainDiv = getWrapperListDiv();
 
