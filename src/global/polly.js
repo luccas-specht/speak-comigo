@@ -43,11 +43,11 @@ const speechParams = {
   Text: 'Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and is predominantly well known for his striking rock posters. Ken started in Perth Western Australia doing posters and album artwork for local bands.',
   // The 'speakText' function supplies this value
   TextType: 'text', // For example, "text"
-  VoiceId: 'Joanna', // For example, "Matthew"
+  VoiceId: 'Matthew', // For example, "Matthew"
 };
 // snippet-end:[Polly.JavaScript.BrowserExample.configV3]
 // snippet-start:[Polly.JavaScript.BrowserExample.synthesizeV3]
-const speakText = async () => {
+(async () => {
   // Update the Text parameter with the text entered by the user
   //speechParams.Text = document.getElementById('textEntry').value;
   try {
@@ -67,13 +67,10 @@ const speakText = async () => {
     // Load the URL of the voice recording into the browser
     document.getElementById('audioSource').src = url;
     document.getElementById('audioPlayback').load();
-    document.getElementById('result').innerHTML = 'pode ser';
   } catch (err) {
     console.log('Error', err);
-    document.getElementById('result').innerHTML = err;
   }
-};
-// Expose the function to the browser
-window.speakText = speakText;
+})();
+
 // snippet-end:[Polly.JavaScript.BrowserExample.synthesizeV3]
 // snippet-end:[Polly.JavaScript.BrowserExample.completeV3]
