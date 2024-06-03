@@ -91,6 +91,10 @@ const personas = {
   },
 };
 
-(function main() {
+function setPersonasOnLocalStorage() {
   localStorage.setItem('personas', JSON.stringify(personas));
+}
+
+(function main() {
+  setPersonasOnLocalStorage();
 })();

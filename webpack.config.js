@@ -3,10 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  target: 'web',
   entry: {
     personas: './src/ui/pages/personas/index.html',
     personaDetails: './src/ui/pages/personaDetails/index.html',
-    globalJs: './src/global/main.js',
+    storage: './src/global/storage.js',
+    polly: './src/global/polly.js',
   },
   module: {
     rules: [
@@ -63,7 +65,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
+    libraryTarget: 'commonjs2',
     clean: true,
+    globalObject: 'this',
   },
   plugins: [
     new HtmlWebpackPlugin({
