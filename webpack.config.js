@@ -8,6 +8,7 @@ module.exports = {
     personas: './src/ui/pages/personas/index.html',
     personaDetails: './src/ui/pages/personaDetails/index.html',
     polly: './src/global/polly.js',
+    personaScript: './src/ui/pages/personaDetails/script.js',
   },
   module: {
     rules: [
@@ -71,7 +72,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/ui/pages/personaDetails/index.html',
       filename: 'personaDetails.html',
-      chunks: ['polly', 'personaDetails'],
+      chunks: ['polly', 'personaScript', 'personaDetails'],
     }),
     new HtmlWebpackPlugin({
       template: './src/ui/pages/personas/index.html',
