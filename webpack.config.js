@@ -4,7 +4,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   target: 'web',
-  entry: './src/global/polly.js',
+  entry: {
+    personas: './src/ui/pages/personas/index.html',
+    personaDetails: './src/ui/pages/personaDetails/index.html',
+    polly: './src/global/polly.js',
+  },
   module: {
     rules: [
       {
@@ -59,14 +63,20 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js',
-    libraryTarget: 'commonjs2',
+    filename: '[name].bundle.js',
     clean: true,
     globalObject: 'this',
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/ui/pages/personaDetails/index.html',
+      filename: 'personaDetails.html',
+      chunks: ['polly', 'personaDetails'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/ui/pages/personas/index.html',
+      filename: 'personas.html',
+      chunks: ['personas'],
     }),
     new MiniCssExtractPlugin(),
   ],
