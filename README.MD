@@ -1,4 +1,7 @@
-## estudos:
+## Studying:
+
+-- webpack
+-- babel
 
 # Web components
 
@@ -8,3 +11,4 @@
 ## Issues and improvements
 
 -- add images into AWS database
+-- image sizes

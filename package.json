@@ -1,5 +1,9 @@
 {
-  "name": "polly-browser",
+  "name": "speak-comigo",
+  "author": {
+    "name": "Lucca Specht",
+    "linkedin": "https://www.linkedin.com/in/luccas-specht/"
+  },
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development --live-reload --open"
