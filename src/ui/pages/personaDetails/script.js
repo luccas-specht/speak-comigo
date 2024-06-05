@@ -34,7 +34,7 @@ function getPersonaByName({ name, personas }) {
   return personas[name];
 }
 
-function renderPersonaDetailsCard({ persona, HTMLElementToAppend, url }) {
+function renderPersonaDetailsCard({ persona, HTMLElementToAppend }) {
   const { imgPath, flagClass, from, name, accent, description } = persona;
 
   const htmlStructure = `
@@ -102,8 +102,6 @@ function renderPersonaDetailsCard({ persona, HTMLElementToAppend, url }) {
   );
 
   element.style.backgroundImage = `url('${imgPath}')`;
-  document.getElementById('audioSource').src = url;
-  document.getElementById('audioPlayback').load();
 }
 
 function getPersonasFromLocalStorage() {
@@ -118,19 +116,16 @@ function getPersonasFromLocalStorage() {
 
 async function createPreviousURLAudio(speechParams) {
   console.log({ speechParams });
-  /**
-   * 
-   * try {
+  try {
     const url = await getSynthesizeSpeechUrl({
       client,
       params: speechParams,
     });
-    return url;
+    document.getElementById('audioSource').src = url;
+    document.getElementById('audioPlayback').load();
   } catch (err) {
     console.log('Error', err);
   }
-   * 
-   */
 }
 
 (async function main() {
@@ -140,14 +135,13 @@ async function createPreviousURLAudio(speechParams) {
     const personas = getPersonasFromLocalStorage();
     const persona = getPersonaByName({ name, personas });
     const mainDiv = getWrapperListDiv();
-    await createPreviousURLAudio({
-      ...speechParams,
-      ...{ Text: persona.description, VoiceId: persona.name.split(' ')[0] },
-    });
     renderPersonaDetailsCard({
       persona,
       HTMLElementToAppend: mainDiv,
-      url: 'opa',
+    });
+    await createPreviousURLAudio({
+      ...speechParams,
+      ...{ Text: persona.description, VoiceId: persona.name.split(' ')[0] },
     });
   }
 })();

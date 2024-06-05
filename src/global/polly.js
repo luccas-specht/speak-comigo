@@ -1,6 +1,6 @@
 import { CognitoIdentityClient } from '@aws-sdk/client-cognito-identity';
 import { fromCognitoIdentityPool } from '@aws-sdk/credential-provider-cognito-identity';
-import { Polly } from '@aws-sdk/client-polly';
+import { Polly, DescribeVoicesCommand } from '@aws-sdk/client-polly';
 import { getSynthesizeSpeechUrl } from '@aws-sdk/polly-request-presigner';
 
 export const client = new Polly({
@@ -14,9 +14,8 @@ export const client = new Polly({
 // Set the parameters
 const speechParams = {
   OutputFormat: 'mp3', // For example, 'mp3'
-  SampleRate: '16000', // For example, '16000
   Text: 'Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and is predominantly well known for his striking rock posters. Ken started in Perth Western Australia doing posters and album artwork for local bands.',
-  VoiceId: 'Matthew', // For example, "Matthew"
+  VoiceId: 'Russell', // For example, "Matthew"
 };
 
 (async () => {
@@ -27,6 +26,17 @@ const speechParams = {
     });
 
     console.log(url);
+    const command = new DescribeVoicesCommand({
+      // DescribeVoicesInput
+      LanguageCode: 'en-AU',
+      IncludeAdditionalLanguageCodes: true,
+    });
+    const response = await client.send(command);
+
+    const filteredVoices = response.Voices.filter((voice) =>
+      voice.SupportedEngines.includes('standard')
+    );
+    console.log({ filteredVoices, response });
 
     document.getElementById('audioSource').src = url;
     document.getElementById('audioPlayback').load();
@@ -35,7 +45,7 @@ const speechParams = {
   }
 })();
 
-export async function createPreviousURLAudio({ speechParams }) {
+export async function createPreviousURLAudio() {
   try {
     const url = await getSynthesizeSpeechUrl({
       client,
