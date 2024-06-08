@@ -18,12 +18,12 @@
   background-image: url('../assets/image/brian.png');
 }
 
-.persona-niamh {
-  background-image: url('../assets/image/niamh.png');
+.persona-nicole {
+  background-image: url('../assets/image/nicole.png');
 }
 
-.persona-ayanda {
-  background-image: url('../assets/image/ayanda.png');
+.persona-aditi {
+  background-image: url('../assets/image/aditi.png');
 }
 
 .persona-salli {
@@ -32,6 +32,18 @@
 
 .persona-joey {
   background-image: url('../assets/image/joey.png');
+}
+
+.persona-russell {
+  background-image: url('../assets/image/russell.png');
+}
+
+.persona-raveena {
+  background-image: url('../assets/image/raveena.png');
+}
+
+.persona-geraint {
+  background-image: url('../assets/image/geraint.png');
 }
 
 .persona-not-found {

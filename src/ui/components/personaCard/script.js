@@ -157,6 +157,7 @@ class PersonaCard extends HTMLElement {
     images.set('ireland', 'assets/svg/ireland.svg');
     images.set('india', 'assets/svg/india.svg');
     images.set('south-africa', 'assets/svg/south-africa.svg');
+    images.set('wales', 'assets/svg/wales.svg');
 
     return images.get(from);
   }

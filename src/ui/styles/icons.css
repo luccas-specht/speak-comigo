@@ -34,6 +34,10 @@
   background-image: url('../assets/svg/flags/india.svg');
 }
 
+.flag-wales {
+  background-image: url('../assets/svg/flags/wales.svg');
+}
+
 .full-logo-speak-comigo {
   background-image: url('../assets/image/full-logo-speak-comigo.png');
 }
