@@ -75,7 +75,7 @@ const personas = {
     flagClass: 'flag-wales',
     from: 'Cardiff, Wales',
     name: 'Geraint halls',
-    accent: 'Australian',
+    accent: 'Wales',
     description:
       'Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and is predominantly well known for his striking rock posters. Ken started in Perth Western Australia doing posters and album artwork for local bands.',
   },
