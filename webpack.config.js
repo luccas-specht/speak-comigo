@@ -7,7 +7,6 @@ module.exports = {
   entry: {
     personas: './src/ui/pages/personas/index.html',
     personaDetails: './src/ui/pages/personaDetails/index.html',
-
     personaScript: './src/ui/pages/personaDetails/script.js',
   },
   module: {
@@ -24,7 +23,7 @@ module.exports = {
         test: /\.png$/i, ///\.(png|jpe?g|gif)$/i
         type: 'asset/resource',
         generator: {
-          filename: 'assets/image/[name][ext]', // Gera imagens, icons, svg... na pasta dist/assets/image/
+          filename: 'assets/image/[name][ext]', // Gera imagens na pasta dist/assets/image/
         },
       },
       {

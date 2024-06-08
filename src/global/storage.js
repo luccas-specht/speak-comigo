@@ -9,32 +9,32 @@ const personas = {
     description:
       'Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and is predominantly well known for his striking rock posters. Ken started in Perth Western Australia doing posters and album artwork for local bands.',
   },
-  'Ruth Brown': {
-    imgPath: 'assets/image/ruth.png',
+  'Salli Brown': {
+    imgPath: 'assets/image/salli.png',
     flagFrom: 'united-states',
     flagClass: 'flag-usa',
     from: 'Washington, D.C, United States',
-    name: 'Ruth Brown',
+    name: 'Salli Brown',
     accent: 'American',
     description:
       'Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and is predominantly well known for his striking rock posters. Ken started in Perth Western Australia doing posters and album artwork for local bands.',
   },
-  'Gregory Smith': {
-    imgPath: 'assets/image/gregory.png',
+  'Joey Smith': {
+    imgPath: 'assets/image/joey.png',
     flagFrom: 'united-states',
     flagClass: 'flag-usa',
     from: 'Arkansas, United States',
-    name: 'Gregory Smith',
+    name: 'Joey Smith',
     accent: 'American',
     description:
       'Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and is predominantly well known for his striking rock posters. Ken started in Perth Western Australia doing posters and album artwork for local bands.',
   },
-  'Danielle Miller': {
-    imgPath: 'assets/image/danielle.png',
+  'Joanna Miller': {
+    imgPath: 'assets/image/joanna.png',
     flagFrom: 'united-states',
     flagClass: 'flag-usa',
     from: 'New York City, United States',
-    name: 'Danielle Miller',
+    name: 'Joanna Miller',
     accent: 'American',
     description:
       'Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and is predominantly well known for his striking rock posters. Ken started in Perth Western Australia doing posters and album artwork for local bands.',
@@ -69,23 +69,23 @@ const personas = {
     description:
       'Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and is predominantly well known for his striking rock posters. Ken started in Perth Western Australia doing posters and album artwork for local bands.',
   },
-  'Niamh Murphy': {
+  'Nicole Baker': {
     imgPath: 'assets/image/niamh.png',
-    flagFrom: 'ireland',
-    flagClass: 'flag-ireland',
-    from: 'Dublin, Ireland',
-    name: 'Niamh Murphy',
-    accent: 'Irish',
+    flagFrom: 'australia',
+    flagClass: 'flag-australia',
+    from: 'Sydney, Australia',
+    name: 'Nicole Baker',
+    accent: 'Australian',
     description:
       'Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and is predominantly well known for his striking rock posters. Ken started in Perth Western Australia doing posters and album artwork for local bands.',
   },
-  'Ayanda Dlamini': {
+  'Aditi Dlamini': {
     imgPath: 'assets/image/ayanda.png',
-    flagFrom: 'south-africa',
-    flagClass: 'flag-south-africa',
-    from: 'Joanesburgo, South Africa',
-    name: 'Ayanda Dlamini',
-    accent: 'South Africa',
+    flagFrom: 'india',
+    flagClass: 'flag-india',
+    from: 'Bangalore India',
+    name: 'Aditi Dlamini',
+    accent: 'Indian',
     description:
       'Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and is predominantly well known for his striking rock posters. Ken started in Perth Western Australia doing posters and album artwork for local bands.',
   },

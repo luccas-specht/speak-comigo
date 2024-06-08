@@ -26,6 +26,14 @@
   background-image: url('../assets/svg/flags/south-africa.svg');
 }
 
+.flag-australia {
+  background-image: url('../assets/svg/flags/australia.svg');
+}
+
+.flag-india {
+  background-image: url('../assets/svg/flags/india.svg');
+}
+
 .full-logo-speak-comigo {
   background-image: url('../assets/image/full-logo-speak-comigo.png');
 }
