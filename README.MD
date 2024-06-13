@@ -7,7 +7,7 @@
 - OpenAI chat stream
 - processing audio on demanding
 
-## Web components
+### Web components
 - Shadom DOM
 - Custom elements
 
