@@ -1,5 +1,7 @@
 # Figma
-<a href="https://www.figma.com/proto/JydOxmkYaOWDorwQvw2WmR/Speak-comigo?node-id=212-287&t=9pyGnXYnNayTtsyf-1&scaling=scale-down&content-scaling=fixed&page-id=208%3A304"> Figma </a>
+
+[![Visualizar Projeto](./src/ui/assets/image/amy.png)](https://www.figma.com/design/JydOxmkYaOWDorwQvw2WmR/Speak-comigo?node-id=208-304&t=adXJDHxMDXJNslF9-1)
+
 
 
 # Tools
