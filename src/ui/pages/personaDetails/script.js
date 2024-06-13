@@ -92,6 +92,9 @@ function renderPersonaDetailsCard({ persona, HTMLElementToAppend }) {
             </audio>
             </figure>
           </div>
+          <div class="wrapper-persona-info">
+            <a href="/chat?name=${name}">Let's to have a chat <i class="arrow-right"></i></a>
+          </div>
         </aside>
       </main>
   `;

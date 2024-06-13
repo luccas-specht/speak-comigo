@@ -6,6 +6,11 @@
   background-image: url('../assets/svg/arrow-left.svg');
 }
 
+.arrow-right {
+  transform: rotate(180deg);
+  background-image: url('../assets/svg/arrow-left.svg');
+}
+
 .icon-profile {
   background-image: url('../assets/svg/user-icons/profile-name.svg');
 }
