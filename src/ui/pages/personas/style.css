@@ -1,11 +1,14 @@
+.main-layout {
+  margin-top: 60px;
+}
+
 .wrapper-persona-card {
   width: fit-content;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 20px 10px;
+  gap: 25px 10px;
   max-width: var(--max-width-container);
-  margin-top: 40px;
 }
 
 .wrapper-persona-card > persona-card {
@@ -17,36 +20,8 @@
   display: flex;
 }
 
-.wrapper-persona-card persona-card[name='Ayanda Dlamini'] {
-  max-width: calc(100% / 4);
-}
-
-@media screen and (max-width: 733px) {
-  .wrapper-persona-card persona-card[name='Ayanda Dlamini'] {
-    max-width: calc(100% / 4);
-  }
-}
-
 @media screen and (max-width: 693px) {
-  .wrapper-persona-card persona-card[name='Ayanda Dlamini'] {
-    max-width: calc(100% / 3);
-  }
-}
-
-@media screen and (max-width: 523px) {
-  .wrapper-persona-card {
-    margin-top: 80px;
-  }
-}
-
-@media screen and (max-width: 553px) {
-  .wrapper-persona-card persona-card[name='Ayanda Dlamini'] {
-    max-width: calc(100% / 2);
-  }
-}
-
-@media screen and (max-width: 353px) {
-  .wrapper-persona-card persona-card[name='Ayanda Dlamini'] {
-    max-width: 100%;
+  .main-layout {
+    margin-top: 90px;
   }
 }

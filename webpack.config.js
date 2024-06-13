@@ -7,8 +7,7 @@ module.exports = {
   entry: {
     personas: './src/ui/pages/personas/index.html',
     personaDetails: './src/ui/pages/personaDetails/index.html',
-    storage: './src/global/storage.js',
-    polly: './src/global/polly.js',
+    personaScript: './src/ui/pages/personaDetails/script.js',
   },
   module: {
     rules: [
@@ -24,7 +23,7 @@ module.exports = {
         test: /\.png$/i, ///\.(png|jpe?g|gif)$/i
         type: 'asset/resource',
         generator: {
-          filename: 'assets/image/[name][ext]', // Gera imagens, icons, svg... na pasta dist/assets/image/
+          filename: 'assets/image/[name][ext]', // Gera imagens na pasta dist/assets/image/
         },
       },
       {
@@ -65,20 +64,19 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    libraryTarget: 'commonjs2',
     clean: true,
     globalObject: 'this',
   },
   plugins: [
     new HtmlWebpackPlugin({
+      template: './src/ui/pages/personaDetails/index.html',
+      filename: 'personaDetails.html',
+      chunks: ['personaScript', 'personaDetails'],
+    }),
+    new HtmlWebpackPlugin({
       template: './src/ui/pages/personas/index.html',
       filename: 'personas.html',
       chunks: ['personas'],
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/ui/pages/personaDetails/index.html',
-      filename: 'personaDetails.html',
-      chunks: ['personaDetails'],
     }),
     new MiniCssExtractPlugin(),
   ],

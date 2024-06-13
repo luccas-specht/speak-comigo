@@ -152,9 +152,12 @@ class PersonaCard extends HTMLElement {
     const images = new Map();
 
     images.set('england', 'assets/svg/england.svg');
+    images.set('australia', 'assets/svg/australia.svg');
     images.set('united-states', 'assets/svg/united-states.svg');
     images.set('ireland', 'assets/svg/ireland.svg');
+    images.set('india', 'assets/svg/india.svg');
     images.set('south-africa', 'assets/svg/south-africa.svg');
+    images.set('wales', 'assets/svg/wales.svg');
 
     return images.get(from);
   }

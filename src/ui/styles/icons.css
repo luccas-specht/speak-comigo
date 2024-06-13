@@ -6,6 +6,11 @@
   background-image: url('../assets/svg/arrow-left.svg');
 }
 
+.arrow-right {
+  transform: rotate(180deg);
+  background-image: url('../assets/svg/arrow-left.svg');
+}
+
 .icon-profile {
   background-image: url('../assets/svg/user-icons/profile-name.svg');
 }
@@ -24,6 +29,18 @@
 
 .flag-south-africa {
   background-image: url('../assets/svg/flags/south-africa.svg');
+}
+
+.flag-australia {
+  background-image: url('../assets/svg/flags/australia.svg');
+}
+
+.flag-india {
+  background-image: url('../assets/svg/flags/india.svg');
+}
+
+.flag-wales {
+  background-image: url('../assets/svg/flags/wales.svg');
 }
 
 .full-logo-speak-comigo {
