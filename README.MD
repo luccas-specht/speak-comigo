@@ -5,7 +5,7 @@
 # Cases of studying
 - Polly AWS
 - OpenAI chat stream
-- processing audio on demanding
+- Processing audio on demanding
 
 ### Web components
 - Shadom DOM
