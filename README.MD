@@ -2,7 +2,7 @@
 - webpack
 - babel
 
-# Studying
+# Case of studying
 - Polly AWS
 - OpenAI chat stream
 - processing audio on demanding
