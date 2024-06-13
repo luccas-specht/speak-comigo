@@ -1,8 +1,11 @@
-# Studying
+# Tools
 - webpack
 - babel
-- AWS SDK
+
+# Studying
 - Polly AWS
+- OpenAI chat stream
+- processing audio on demanding
 
 ## Web components
 - Shadom DOM
