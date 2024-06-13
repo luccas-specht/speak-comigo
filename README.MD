@@ -1,5 +1,5 @@
 # Figma
-[![Visualizar Projeto](./github template readme.png)](https://www.figma.com/design/JydOxmkYaOWDorwQvw2WmR/Speak-comigo?node-id=208-304&t=adXJDHxMDXJNslF9-1)
+[![Visualizar Projeto](./github_template_readme.png)](https://www.figma.com/design/JydOxmkYaOWDorwQvw2WmR/Speak-comigo?node-id=208-304&t=adXJDHxMDXJNslF9-1)
 
 
 
