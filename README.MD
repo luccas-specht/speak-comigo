@@ -1,14 +1,13 @@
 # Studying:
--- webpack
--- babel
--- AWS SDK
--- Polly AWS
+- webpack
+- babel
+- AWS SDK
+- Polly AWS
 
 # Web components
--Shadom DOM
--Custom elements
+- Shadom DOM
+- Custom elements
 
-## Issues and improvements
-
--- add images into AWS database
--- image sizes
+# Issues and improvements
+- add images into AWS database
+- image sizes
