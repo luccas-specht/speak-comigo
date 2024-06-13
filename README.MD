@@ -1,8 +1,8 @@
 # Tools
-- webpack
-- babel
+- Webpack
+- Babel
 
-# Case of studying
+# Cases of studying
 - Polly AWS
 - OpenAI chat stream
 - processing audio on demanding
