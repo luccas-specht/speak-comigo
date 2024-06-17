@@ -3,6 +3,7 @@
 <a href="https://www.figma.com/design/JydOxmkYaOWDorwQvw2WmR/Speak-comigo?node-id=208-304&t=adXJDHxMDXJNslF9-1" target="_blank">
   <img src="./github_template_readme.png" alt="Figma Design"/>
 </a>
+**Note:** To open the link in a new tab, use `Ctrl` (or `Cmd` on macOS) + click.
 
 ## What is Speak Comigo?
 
