@@ -1,5 +1,5 @@
 # Speak Comigo
-**Note:** To open the link in a new tab, use `Ctrl` (or `Cmd` on macOS) + click.
+**Note:** To see the Screens on Figma in a new tab, use `Ctrl` (or `Cmd` on macOS) + click.
 
 [![Figma Design](./github_template_readme.png)](https://www.figma.com/design/JydOxmkYaOWDorwQvw2WmR/Speak-comigo?node-id=208-304&t=adXJDHxMDXJNslF9-1)
 
