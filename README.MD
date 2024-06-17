@@ -30,3 +30,4 @@ I thought: _"What if there was a way to improve my listening skills based on dif
 
 - [ ] Adjust image sizes
 - [ ] Improve logo resolution
+- [ ] Split webpack dev and prod files
