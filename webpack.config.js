@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   target: 'web',
   entry: {
+    welcome: './src/ui/pages/welcome/index.html',
     personas: './src/ui/pages/personas/index.html',
     personaDetails: './src/ui/pages/personaDetails/index.html',
     personaScript: './src/ui/pages/personaDetails/script.js',
@@ -56,6 +57,7 @@ module.exports = {
     },
     historyApiFallback: {
       rewrites: [
+        { from: /^\/$/, to: '/welcome.html' },
         { from: /^\/personas$/, to: '/personas.html' },
         { from: /^\/persona-details$/, to: '/personaDetails.html' },
       ],
@@ -68,6 +70,11 @@ module.exports = {
     globalObject: 'this',
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/ui/pages/welcome/index.html',
+      filename: 'welcome.html',
+      chunks: ['welcome'],
+    }),
     new HtmlWebpackPlugin({
       template: './src/ui/pages/personaDetails/index.html',
       filename: 'personaDetails.html',
