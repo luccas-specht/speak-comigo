@@ -8,7 +8,7 @@
 
 Speak Comigo is a JavaScript-based web app built purely with Webpack and Babel to improve English listening and speaking skills using AI. 
 The idea came from my experience working with people from the UK. Even though I knew English, the accents of UK speakers were a quite difficult to understand. 
-I thought: _"What if there was a way to improve my listening skills based on different English accents?"_
+Then, I've thought: _"What if there was a way to improve my listening skills based on different English accents?"_
 
 ## Tools
 
