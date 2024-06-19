@@ -3,6 +3,10 @@ const texts = [
   'Desenvolva seus ouvidos para\n entender qualquer sotaque em\n inglês ao redor do mundo, usando\n personas criadas por IA.',
   'Desarrolla tus oídos para\n comprender cualquier acento\n inglés en todo el mundo utilizando\n personajes creados por IA.',
 ];
+
+let stepIndexToRender = 0;
+const mainTag = document.querySelector('main');
+
 function animatedTextTransition() {
   let currentIndex = 0;
   const textElement = document.getElementById('animated-text');
@@ -56,11 +60,47 @@ function handleCleanWelcomePage() {
   const button = document.getElementById('get-started-button');
 
   button.addEventListener('click', function () {
-    document.querySelector('main').innerHTML = '';
+    mainTag.innerHTML = '';
+    renderStep({ indexToRender: stepIndexToRender });
   });
 }
 
-function addFirstStepSection() {}
+function getCurrentStepToRender({ indexToRender }) {
+  const step = {
+    step_0: () => `
+       <section class="step">
+        <div class="align-skip">
+          <a href="/personas">Skip</a>
+        </div>
+        <img
+          src="assets/image/step-1.png"
+          alt="fake persona"
+        />
+        <div class="bullets">
+          <div class="current-bullet"></div>
+          <div></div>
+          <div></div>
+        </div>
+        <h1>Choose the AI Persona You want to speak with</h1>
+        <span>
+          They have their own ideas, locales characteristics and experiences.
+        </span>
+        <div class="wrapper-go-back-go-forward-buttons">
+          <button>go back</button>
+          <div></div>
+          <button>go forward</button>
+        </div>
+      </section>`,
+  };
+
+  return step[`step_${indexToRender}`]();
+}
+
+function renderStep({ indexToRender }) {
+  const step = getCurrentStepToRender({ indexToRender });
+  console.log({ step, indexToRender, mainTag });
+  mainTag.innerHTML = step;
+}
 
 (function main() {
   animatedTextTransition();
