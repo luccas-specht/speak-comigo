@@ -50,3 +50,20 @@
 .world {
   background-image: url('../assets/svg/world.svg');
 }
+
+.step-arrow-left-enable {
+  transform: rotate(-180deg);
+  background-image: url('../assets/svg/step-arrow.svg');
+}
+
+.step-arrow-right-enable-blue {
+  background-image: url('../assets/svg/step-arrow-blue.svg');
+}
+
+.step-arrow-right-enable {
+  background-image: url('../assets/svg/step-arrow.svg');
+}
+
+.step-arrow-right-disable {
+  background-image: url('../assets/svg/step-arrow-disable.svg');
+}
