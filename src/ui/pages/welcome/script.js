@@ -4,7 +4,6 @@ const texts = [
   'Desarrolla tus oídos para\n comprender cualquier acento\n inglés en todo el mundo utilizando\n personajes creados por IA.',
 ];
 
-let stepIndexToRender = 0;
 const mainTag = document.querySelector('main');
 
 function animatedTextTransition() {
@@ -61,7 +60,7 @@ function handleCleanWelcomePage() {
 
   button.addEventListener('click', function () {
     mainTag.innerHTML = '';
-    renderStep({ indexToRender: stepIndexToRender });
+    renderFirstStep();
   });
 }
 
@@ -86,19 +85,95 @@ function getCurrentStepToRender({ indexToRender }) {
           They have their own ideas, locales characteristics and experiences.
         </span>
         <div class="wrapper-go-back-go-forward-buttons">
-          <button>go back</button>
+          <button class="not-allowed-click">
+           <i class="step-arrow-right-disable"></i>
+          </button>
           <div></div>
-          <button>go forward</button>
+          <button onclick="renderSecondStep()">
+           <i class="step-arrow-right-enable"></i>
+          </button>
         </div>
+      </section>`,
+    step_1: () => `
+      <section class="step">
+       <div class="align-skip">
+         <a href="/personas">Skip</a>
+       </div>
+       <img
+         src="assets/image/step-2.png"
+         alt="fake persona"
+       />
+       <div class="bullets">
+          <div></div>
+          <div class="current-bullet"></div>
+          <div></div>
+        </div>
+       <h1>Get to know more about them</h1>
+       <span>
+         Locale, Accent, What is Their history, What do they do for living?
+       </span>
+       <div class="wrapper-go-back-go-forward-buttons">
+           <button onclick="renderFirstStep()">
+           <i class="step-arrow-left-enable"></i>
+         </button>
+         <div></div>
+        <button onclick="renderThirdStep()">
+          <i class="step-arrow-right-enable"></i>
+         </button>
+       </div>
+     </section>`,
+    step_2: () => `
+       <section class="step">
+        <div class="align-skip">
+          <a href="/personas">Skip</a>
+        </div>
+        <img
+          src="assets/image/step-3.png"
+          alt="fake persona"
+        />
+        <div class="bullets">
+          <div></div>
+          <div></div>
+          <div class="current-bullet"></div>
+        </div>
+        <h1>After that, let’s start a conversion </h1>
+        <span>
+         You’ll be able to have a chat like a native speaker would be speaking.
+        </span>
+          <div class="wrapper-go-back-go-forward-buttons">
+            <button onclick="renderSecondStep()">
+              <i class="step-arrow-left-enable"></i>
+            </button>
+            <div></div>
+            <button onclick="goToPersonasPage()">
+              <span>Personas</span>
+              <i class="step-arrow-right-enable-blue"></i>
+            </button>
+          </div>
       </section>`,
   };
 
   return step[`step_${indexToRender}`]();
 }
 
+function goToPersonasPage() {
+  window.location.href = './personas.html';
+}
+
+function renderFirstStep() {
+  renderStep({ indexToRender: 0 });
+}
+
+function renderSecondStep() {
+  renderStep({ indexToRender: 1 });
+}
+
+function renderThirdStep() {
+  renderStep({ indexToRender: 2 });
+}
+
 function renderStep({ indexToRender }) {
   const step = getCurrentStepToRender({ indexToRender });
-  console.log({ step, indexToRender, mainTag });
   mainTag.innerHTML = step;
 }
 
