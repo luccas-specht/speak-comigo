@@ -1,7 +1,4 @@
-import { CognitoIdentityClient } from '@aws-sdk/client-cognito-identity';
-import { fromCognitoIdentityPool } from '@aws-sdk/credential-provider-cognito-identity';
-import { Polly, DescribeVoicesCommand } from '@aws-sdk/client-polly';
-import { getSynthesizeSpeechUrl } from '@aws-sdk/polly-request-presigner';
+const { createPreviousURLAudio } = window.polly;
 
 const speechParams = {
   OutputFormat: 'mp3',
@@ -9,17 +6,6 @@ const speechParams = {
   Text: undefined,
   VoiceId: undefined,
 };
-
-const region = 'us-east-2';
-const identityPoolId = 'us-east-2:89799f06-a100-48f8-aa5d-8aa5558465f0';
-
-export const client = new Polly({
-  region: region,
-  credentials: fromCognitoIdentityPool({
-    client: new CognitoIdentityClient({ region }),
-    identityPoolId,
-  }),
-});
 
 function getWrapperListDiv() {
   return document.querySelector('.main-layout');
@@ -103,7 +89,6 @@ function renderPersonaDetailsCard({ persona, HTMLElementToAppend }) {
   const element = document.querySelector(
     '.wrapper-persona-details > aside:first-child'
   );
-
   element.style.backgroundImage = `url('${imgPath}')`;
 }
 
@@ -117,7 +102,25 @@ function getPersonasFromLocalStorage() {
   }
 }
 
-async function createPreviousURLAudio(speechParams) {
+(async function main() {
+  if (window.location) {
+    const urlCoded = window.location.href;
+    const name = getNameFromURL({ urlCoded });
+    const personas = getPersonasFromLocalStorage();
+    const persona = getPersonaByName({ name, personas });
+    const mainDiv = getWrapperListDiv();
+    renderPersonaDetailsCard({
+      persona,
+      HTMLElementToAppend: mainDiv,
+    });
+    await createPreviousURLAudio({
+      ...speechParams,
+      ...{ Text: persona.description, VoiceId: persona.name.split(' ')[0] },
+    });
+  }
+})();
+
+/**async function createPreviousURLAudio(speechParams) {
   console.log({ speechParams });
 
   try {
@@ -142,22 +145,4 @@ async function createPreviousURLAudio(speechParams) {
   } catch (err) {
     console.log('Error', err);
   }
-}
-
-(async function main() {
-  if (window.location) {
-    const urlCoded = window.location.href;
-    const name = getNameFromURL({ urlCoded });
-    const personas = getPersonasFromLocalStorage();
-    const persona = getPersonaByName({ name, personas });
-    const mainDiv = getWrapperListDiv();
-    renderPersonaDetailsCard({
-      persona,
-      HTMLElementToAppend: mainDiv,
-    });
-    await createPreviousURLAudio({
-      ...speechParams,
-      ...{ Text: persona.description, VoiceId: persona.name.split(' ')[0] },
-    });
-  }
-})();
+} */

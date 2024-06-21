@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   target: 'web',
   entry: {
+    polly: './src/global/polly.js',
     welcome: './src/ui/pages/welcome/index.html',
     personas: './src/ui/pages/personas/index.html',
     personaDetails: './src/ui/pages/personaDetails/index.html',
@@ -67,6 +68,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
     clean: true,
+    library: '[name]', // Adicione isso para exportar como uma biblioteca global
+    libraryTarget: 'umd',
     globalObject: 'this',
   },
   plugins: [
@@ -76,14 +79,14 @@ module.exports = {
       chunks: ['welcome'],
     }),
     new HtmlWebpackPlugin({
-      template: './src/ui/pages/personaDetails/index.html',
-      filename: 'personaDetails.html',
-      chunks: ['personaScript', 'personaDetails'],
-    }),
-    new HtmlWebpackPlugin({
       template: './src/ui/pages/personas/index.html',
       filename: 'personas.html',
       chunks: ['personas'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/ui/pages/personaDetails/index.html',
+      filename: 'personaDetails.html',
+      chunks: ['polly', 'personaScript', 'personaDetails'],
     }),
     new MiniCssExtractPlugin(),
   ],
