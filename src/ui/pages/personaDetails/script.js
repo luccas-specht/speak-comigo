@@ -72,6 +72,7 @@ function renderPersonaDetailsCard({ persona, HTMLElementToAppend }) {
           </div>
           <div class="wrapper-persona-info wrapper-content-actions">
             <figure>
+              <audio-speaker></audio-speaker>
               <figcaption>Listening my voice</figcaption>
               <audio id="audioPlayback" controls>
               <source id="audioSource" type="audio/mp3" />
@@ -119,30 +120,3 @@ function getPersonasFromLocalStorage() {
     });
   }
 })();
-
-/**async function createPreviousURLAudio(speechParams) {
-  console.log({ speechParams });
-
-  try {
-    const url = await getSynthesizeSpeechUrl({
-      client,
-      params: speechParams,
-    });
-
-    const command = new DescribeVoicesCommand({
-      // DescribeVoicesInput
-      //LanguageCode: 'en-AU',
-      IncludeAdditionalLanguageCodes: true,
-    });
-    const response = await client.send(command);
-
-    const filteredVoices = response.Voices.filter((voice) =>
-      voice.LanguageCode.startsWith('en')
-    );
-    console.log({ filteredVoices, response });
-    document.getElementById('audioSource').src = url;
-    document.getElementById('audioPlayback').load();
-  } catch (err) {
-    console.log('Error', err);
-  }
-} */
