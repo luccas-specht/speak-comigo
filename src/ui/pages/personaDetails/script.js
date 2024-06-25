@@ -20,7 +20,7 @@ function getPersonaByName({ name, personas }) {
   return personas[name];
 }
 
-function renderPersonaDetailsCard({ persona, HTMLElementToAppend }) {
+function renderPersonaDetailsCard({ persona, HTMLElementToAppend, url }) {
   const { imgPath, flagClass, from, name, accent, description } = persona;
 
   const htmlStructure = `
@@ -71,7 +71,8 @@ function renderPersonaDetailsCard({ persona, HTMLElementToAppend }) {
             </em>
           </div>
           <div class="wrapper-persona-info wrapper-content-actions">
-             <audio-speaker></audio-speaker>
+             <audio-speaker label-description="Listening my voice" url=${url}>
+             </audio-speaker>
           </div>
           <div class="wrapper-persona-info">
             <a href="/chat?name=${name}">Let's to have a chat <i class="arrow-right"></i></a>
@@ -104,16 +105,16 @@ function getPersonasFromLocalStorage() {
     const personas = getPersonasFromLocalStorage();
     const persona = getPersonaByName({ name, personas });
     const mainDiv = getWrapperListDiv();
-    renderPersonaDetailsCard({
-      persona,
-      HTMLElementToAppend: mainDiv,
-    });
-    /**
-     * await createPreviousURLAudio({
+
+    const url = await createPreviousURLAudio({
       ...speechParams,
       ...{ Text: persona.description, VoiceId: persona.name.split(' ')[0] },
     });
-     * 
-     */
+
+    renderPersonaDetailsCard({
+      persona,
+      HTMLElementToAppend: mainDiv,
+      url,
+    });
   }
 })();

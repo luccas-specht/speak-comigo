@@ -18,6 +18,8 @@ export async function createPreviousURLAudio(speechParams) {
       params: speechParams,
     });
 
+    return url;
+
     /*
    
     document.getElementById('audioSource').src = url;

@@ -16,11 +16,19 @@ class AudioSpeaker extends HTMLElement {
 
     shadow.innerHTML = htmlStructure;
     shadow.appendChild(styleStructure);
+
+    const audioSource = this.shadowRoot.querySelector('#audio-source');
+    const audio = this.shadowRoot.querySelector('#audio');
+
+    if (audioSource && audio) {
+      audioSource.src = this._url;
+      audio.load();
+    }
   }
 
   attributeChangedCallback(name, _, newValue) {
     const attributes = {
-      url: () => (this.url = newValue),
+      url: () => (this._url = newValue),
       'label-description': () => (this._labelDescription = newValue),
     };
     attributes[name]();
@@ -30,11 +38,15 @@ class AudioSpeaker extends HTMLElement {
     const htmlStructure = `
       <div class="audio-player">
       <audio id="audio" controls>
-        <source type="audio/mpeg" id=audio-source"/>
+        <source type="audio/mpeg" id="audio-source"/>
         Your browser does not support the audio element.
       </audio>
       <div class="controls">
-        <span>Listening my voice</span>
+        ${
+          this?._labelDescription
+            ? `<span>${this._labelDescription}</span>`
+            : `<span> </span>`
+        }
         <div class="timers">
           <div id="current-time">0:00</div>
           <div id="total-time">0:00</div>
