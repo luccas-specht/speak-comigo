@@ -71,13 +71,7 @@ function renderPersonaDetailsCard({ persona, HTMLElementToAppend }) {
             </em>
           </div>
           <div class="wrapper-persona-info wrapper-content-actions">
-            <figure>
-              <audio-speaker></audio-speaker>
-              <figcaption>Listening my voice</figcaption>
-              <audio id="audioPlayback" controls>
-              <source id="audioSource" type="audio/mp3" />
-            </audio>
-            </figure>
+             <audio-speaker></audio-speaker>
           </div>
           <div class="wrapper-persona-info">
             <a href="/chat?name=${name}">Let's to have a chat <i class="arrow-right"></i></a>
@@ -114,9 +108,12 @@ function getPersonasFromLocalStorage() {
       persona,
       HTMLElementToAppend: mainDiv,
     });
-    await createPreviousURLAudio({
+    /**
+     * await createPreviousURLAudio({
       ...speechParams,
       ...{ Text: persona.description, VoiceId: persona.name.split(' ')[0] },
     });
+     * 
+     */
   }
 })();

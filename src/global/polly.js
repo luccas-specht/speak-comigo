@@ -18,8 +18,12 @@ export async function createPreviousURLAudio(speechParams) {
       params: speechParams,
     });
 
+    /*
+   
     document.getElementById('audioSource').src = url;
     document.getElementById('audioPlayback').load();
+   
+   */
   } catch (err) {
     console.log('Error', err);
   }

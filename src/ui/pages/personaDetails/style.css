@@ -87,21 +87,21 @@
   align-content: center;
   justify-content: center;
   justify-items: center;
+  align-self: center;
   width: 100%;
   padding: 10px;
   height: 40px;
   background-color: #141718;
-  border-radius: 10px;
+  border-radius: 15px;
   color: white;
   font-size: 15px;
   line-height: 23px;
 }
 
 .wrapper-persona-info a > i {
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
-  margin-top: -1px;
+  width: 23px;
+  height: 23px;
+  margin-right: 10px;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -201,17 +201,4 @@
 .wrapper-content-actions {
   flex: 1;
   padding: 0;
-}
-
-.wrapper-content-actions > figure > figcaption {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  color: #333333;
-  margin-bottom: 5px;
-}
-
-.wrapper-content-actions > figure > audio {
-  width: 100%;
 }

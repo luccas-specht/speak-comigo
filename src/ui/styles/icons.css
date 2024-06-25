@@ -67,3 +67,11 @@
 .step-arrow-right-disable {
   background-image: url('../assets/svg/step-arrow-disable.svg');
 }
+
+.play {
+  background-image: url('../assets/svg/play.svg');
+}
+
+.pause {
+  background-image: url('../assets/svg/pause.svg');
+}
