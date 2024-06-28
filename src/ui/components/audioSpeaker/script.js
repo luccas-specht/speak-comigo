@@ -17,13 +17,25 @@ class AudioSpeaker extends HTMLElement {
     shadow.innerHTML = htmlStructure;
     shadow.appendChild(styleStructure);
 
-    const audioSource = this.shadowRoot.querySelector('#audio-source');
-    const audio = this.shadowRoot.querySelector('#audio');
+    const audioSource = shadow.getElementById('audio-source');
+    const audio = shadow.getElementById('audio');
+    const playPauseButton = shadow.getElementById('play-pause-button');
+    const progressBar = shadow.getElementById('progress-bar');
+    const currentTimeDisplay = shadow.getElementById('current-time');
+    const totalTimeDisplay = shadow.getElementById('total-time');
 
     if (audioSource && audio) {
       audioSource.src = this._url;
       audio.load();
     }
+
+    this.behavior({
+      audio,
+      playPauseButton,
+      progressBar,
+      currentTimeDisplay,
+      totalTimeDisplay,
+    });
   }
 
   attributeChangedCallback(name, _, newValue) {
@@ -36,7 +48,7 @@ class AudioSpeaker extends HTMLElement {
 
   build() {
     const htmlStructure = `
-      <div class="audio-player">
+      <div class="audio-player .pause">
       <audio id="audio" controls>
         <source type="audio/mpeg" id="audio-source"/>
         Your browser does not support the audio element.
@@ -159,32 +171,25 @@ class AudioSpeaker extends HTMLElement {
     return styleElement;
   }
 
-  behavior() {
-    const audio = document.getElementById('audio');
-    const playPauseButton = document.getElementById('play-pause-button');
-
-    const progressBar = document.getElementById('progress-bar');
-    const currentTimeDisplay = document.getElementById('current-time');
-    const totalTimeDisplay = document.getElementById('total-time');
-
+  behavior({
+    audio,
+    playPauseButton,
+    progressBar,
+    currentTimeDisplay,
+    totalTimeDisplay,
+  }) {
     let isPlaying = false;
 
     playPauseButton.addEventListener('click', () => {
       if (isPlaying) {
         audio.pause();
         playPauseButton.innerHTML = `
-          <img
-            src="../../assets/svg/play.svg"
-            alt="Play icon"
-          />
+          pp
         `;
       } else {
         audio.play();
         playPauseButton.innerHTML = `
-          <img
-            src"../../"
-            alt="Pause icon"
-          />
+          p
         `;
       }
       isPlaying = !isPlaying;
@@ -196,12 +201,23 @@ class AudioSpeaker extends HTMLElement {
 
       const currentMinutes = Math.floor(currentTime / 60);
       const currentSeconds = Math.floor(currentTime % 60);
+
       const totalMinutes = Math.floor(duration / 60);
       const totalSeconds = Math.floor(duration % 60);
+
+      console.log({
+        totalTimeDisplayTX: totalTimeDisplay.textContent,
+        curr: currentTimeDisplay.textContent,
+        totalMinutes,
+        totalSeconds,
+        duration,
+        currentTime,
+      });
 
       currentTimeDisplay.textContent = `${currentMinutes}:${
         currentSeconds < 10 ? '0' : ''
       }${currentSeconds}`;
+
       totalTimeDisplay.textContent = `${totalMinutes}:${
         totalSeconds < 10 ? '0' : ''
       }${totalSeconds}`;
