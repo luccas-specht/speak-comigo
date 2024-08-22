@@ -48,7 +48,7 @@ class AudioSpeaker extends HTMLElement {
 
   build() {
     const htmlStructure = `
-      <div class="audio-player .pause">
+      <div class="audio-player">
       <audio id="audio" controls>
         <source type="audio/mpeg" id="audio-source"/>
         Your browser does not support the audio element.
@@ -61,7 +61,6 @@ class AudioSpeaker extends HTMLElement {
         }
         <div class="timers">
           <div id="current-time">0:00</div>
-          <div id="total-time">0:00</div>
         </div>
       </div>
     </div>
@@ -101,7 +100,7 @@ class AudioSpeaker extends HTMLElement {
         }
 
         .progress {
-          height: 5px;
+          height: 7px;
           border-top-right-radius: 5px;
           border-end-end-radius: 5px;
           background-color: #e2e2e2;
@@ -111,11 +110,12 @@ class AudioSpeaker extends HTMLElement {
         .progress-bar {
           width: 0;
           height: 100%;
-          background-color: #ffa38e;
+          background-color: #fc5c4c;
+          border-top-right-radius: 5px;
+          border-end-end-radius: 5px;
         }
 
-        #current-time,
-        #total-time {
+        #current-time {
           margin-top: 10px;
         }
 
@@ -130,20 +130,14 @@ class AudioSpeaker extends HTMLElement {
         .timers {
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: flex-end;
           width: 100%;
           max-width: 60px;
-          margin-left: -10px;
           margin-top: -5px;
           gap: 2px;
           color: #333333;
           font-size: 14px;
           font-weight: 500;
-        }
-
-        #current-time::after {
-          content: '/';
-          padding-left: 2px;
         }
 
         .wrapper-play-button {
@@ -184,12 +178,18 @@ class AudioSpeaker extends HTMLElement {
       if (isPlaying) {
         audio.pause();
         playPauseButton.innerHTML = `
-          pp
+            <img
+              src="../../assets/svg/play.svg"
+              alt="Play icon"
+            />
         `;
       } else {
         audio.play();
         playPauseButton.innerHTML = `
-          p
+            <img
+              src="../../assets/svg/pause.svg"
+              alt="Play icon"
+            />
         `;
       }
       isPlaying = !isPlaying;
@@ -202,25 +202,9 @@ class AudioSpeaker extends HTMLElement {
       const currentMinutes = Math.floor(currentTime / 60);
       const currentSeconds = Math.floor(currentTime % 60);
 
-      const totalMinutes = Math.floor(duration / 60);
-      const totalSeconds = Math.floor(duration % 60);
-
-      console.log({
-        totalTimeDisplayTX: totalTimeDisplay.textContent,
-        curr: currentTimeDisplay.textContent,
-        totalMinutes,
-        totalSeconds,
-        duration,
-        currentTime,
-      });
-
       currentTimeDisplay.textContent = `${currentMinutes}:${
         currentSeconds < 10 ? '0' : ''
       }${currentSeconds}`;
-
-      totalTimeDisplay.textContent = `${totalMinutes}:${
-        totalSeconds < 10 ? '0' : ''
-      }${totalSeconds}`;
 
       const progress = (currentTime / duration) * 100;
       progressBar.style.width = `${progress}%`;

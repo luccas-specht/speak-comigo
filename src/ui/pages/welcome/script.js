@@ -1,7 +1,7 @@
 const texts = [
   'Developing your ears to understand any English Accent around the world using personas created by AI.',
-  'Desenvolva seus ouvidos para\n entender qualquer sotaque em\n inglês ao redor do mundo, usando\n personas criadas por IA.',
   'Desarrolla tus oídos para\n comprender cualquier acento\n inglés en todo el mundo utilizando\n personajes creados por IA.',
+  'Treine seus ouvidos para\n entender qualquer sotaque em\n inglês ao redor do mundo, usando\n personas criadas por IA.',
 ];
 
 const mainTag = document.querySelector('main');
