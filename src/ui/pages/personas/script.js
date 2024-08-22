@@ -3,13 +3,17 @@ function getWrapperListSection() {
 }
 
 function createPersonaTag({ persona }) {
-  const { imgPath, flagFrom, name, accent } = persona;
+  const { imgPath, flagFrom, name, accent, flagClass, from, description } =
+    persona;
 
   const personaCardTag = document.createElement('persona-card');
   personaCardTag.setAttribute('img-path', imgPath);
   personaCardTag.setAttribute('flag-from', flagFrom);
   personaCardTag.setAttribute('name', name);
   personaCardTag.setAttribute('accent', accent);
+  personaCardTag.setAttribute('flag-class', flagClass);
+  personaCardTag.setAttribute('description', description);
+  personaCardTag.setAttribute('from', from);
 
   return personaCardTag;
 }

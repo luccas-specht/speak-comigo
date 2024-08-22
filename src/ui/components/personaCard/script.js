@@ -1,5 +1,13 @@
 class PersonaCard extends HTMLElement {
-  static observedAttributes = ['flag-from', 'name', 'accent', 'img-path'];
+  static observedAttributes = [
+    'name',
+    'from',
+    'accent',
+    'description',
+    'img-path',
+    'flag-from',
+    'flag-class',
+  ];
 
   constructor() {
     super();
@@ -8,6 +16,9 @@ class PersonaCard extends HTMLElement {
     this._name = 'not defined';
     this._accent = 'not defined';
     this._imgPath = 'assets/image/person-not-found.png';
+    this._flagClass;
+    this._from;
+    this._description;
   }
 
   connectedCallback() {
@@ -19,6 +30,9 @@ class PersonaCard extends HTMLElement {
 
     shadow.innerHTML = htmlStructure;
     shadow.appendChild(styleStructure);
+
+    const linkElement = shadow.querySelector('.persona-card');
+    linkElement.addEventListener('click', () => this.saveToLocalStorage());
   }
 
   attributeChangedCallback(name, _, newValue) {
@@ -27,8 +41,25 @@ class PersonaCard extends HTMLElement {
       accent: () => (this._accent = newValue),
       'img-path': () => (this._imgPath = newValue),
       'flag-from': () => (this._flagFrom = newValue),
+      from: () => (this._from = newValue),
+      'flag-class': () => (this._flagClass = newValue),
+      description: () => (this._description = newValue),
     };
     attributes[name]();
+  }
+
+  saveToLocalStorage() {
+    const personaData = {
+      flagFrom: this._flagFrom,
+      name: this._name,
+      accent: this._accent,
+      imgPath: this._imgPath,
+      from: this._from,
+      flagClass: this._flagClass,
+      description: this._description,
+    };
+
+    localStorage.setItem('personaData', JSON.stringify(personaData));
   }
 
   build() {

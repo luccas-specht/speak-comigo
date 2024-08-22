@@ -11,15 +11,6 @@ function getWrapperListDiv() {
   return document.querySelector('.main-layout');
 }
 
-function getNameFromURL({ urlCoded }) {
-  const params = new URLSearchParams(urlCoded.split('?')[1]);
-  return params.get('name');
-}
-
-function getPersonaByName({ name, personas }) {
-  return personas[name];
-}
-
 function renderPersonaDetailsCard({ persona, HTMLElementToAppend, url }) {
   const { imgPath, flagClass, from, name, accent, description } = persona;
 
@@ -88,22 +79,10 @@ function renderPersonaDetailsCard({ persona, HTMLElementToAppend, url }) {
   element.style.backgroundImage = `url('${imgPath}')`;
 }
 
-function getPersonasFromLocalStorage() {
-  try {
-    const personas = localStorage.getItem('personas');
-    const personasParsed = JSON.parse(personas);
-    return personasParsed;
-  } catch (e) {
-    console.log(e);
-  }
-}
-
 (async function main() {
   if (window.location) {
-    const urlCoded = window.location.href;
-    const name = getNameFromURL({ urlCoded });
-    const personas = getPersonasFromLocalStorage();
-    const persona = getPersonaByName({ name, personas });
+    const personaData = localStorage.getItem('personaData');
+    const persona = JSON.parse(personaData);
     const mainDiv = getWrapperListDiv();
 
     const url = await createPreviousURLAudio({

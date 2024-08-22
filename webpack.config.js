@@ -10,6 +10,7 @@ module.exports = {
     personas: './src/ui/pages/personas/index.html',
     personaDetails: './src/ui/pages/personaDetails/index.html',
     personaScript: './src/ui/pages/personaDetails/script.js',
+    chat: './src/ui/pages/chat/index.html',
   },
   module: {
     rules: [
@@ -72,6 +73,7 @@ module.exports = {
         { from: /^\/$/, to: '/welcome.html' },
         { from: /^\/personas$/, to: '/personas.html' },
         { from: /^\/persona-details$/, to: '/personaDetails.html' },
+        { from: /^\/chat$/, to: '/chat.html' },
       ],
     },
   },
@@ -88,6 +90,11 @@ module.exports = {
       template: './src/ui/pages/welcome/index.html',
       filename: 'welcome.html',
       chunks: ['welcome'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/ui/pages/chat/index.html',
+      filename: 'chat.html',
+      chunks: ['chat'],
     }),
     new HtmlWebpackPlugin({
       template: './src/ui/pages/personas/index.html',
