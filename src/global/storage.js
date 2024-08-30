@@ -129,3 +129,28 @@ function setPersonasOnLocalStorage() {
 (function main() {
   setPersonasOnLocalStorage();
 })();
+
+
+
+/**
+ * 
+ * 1 - 
+ - return in string
+ - if two mark, order the names by alphabetical order
+ - sortByMarkDescending('[name: Alice, mark: 90]')
+ * 2 - contact form in react
+   3 - clicable card, initially only one card is face up. Whenever a card is clicked
+   the card that was face up is turned over to face down and the clicked card is turned over
+   to face up. Only one card is ever face up
+   when an up card is clicked it remains up
+
+
+   // example case:
+   document.body.innerHTML = `
+    <table>
+    </table>
+   `
+
+
+ */
+
